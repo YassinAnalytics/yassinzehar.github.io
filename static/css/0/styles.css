@@ -287,3 +287,39 @@ h2 {
 .head__nav a {
   margin-left: 1.5rem;
 }
+
+.pm-thumb{
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 10px;
+  padding: 18px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,.6);
+}
+
+.pm-thumb-kicker{
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: 10px;
+}
+
+.pm-thumb-title{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pm-thumb-meta{
+  margin-top: auto;
+  font-size: 13px;
+  opacity: .75;
+}
+
+.portfolio-box{
+  text-decoration: none;
+  color: inherit;
+}
+
