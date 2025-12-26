@@ -1,0 +1,289 @@
+body {
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 15px;
+  font-weight: normal;
+  color: #111;
+  background-color: #fdf6ee;
+}
+
+#banner h1 {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 35px;
+  line-height: 10px;
+  font-weight: bold;
+  color: #1b0180;
+}
+
+ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ul li {
+  margin-left: 20px;
+}
+
+#banner h1 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+#banner h2 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #1b0180;
+  box-sizing: border-box;
+}
+
+#banner ul {
+  color: #111;
+  padding-left: 0;
+  font-size: 15px !important;
+}
+
+#banner ul li::before {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  color: #111;
+}
+
+#banner .button {
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 12px;
+  color: white;
+  background-color: #1b0180;
+  border-color: #1b0180;
+}
+
+div .links a {
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 0.875rem;
+  color: #111;
+  padding: 2px 10px 2px 0px;
+}
+
+#landing-footer,
+#landing-footer p,
+#landing-footer a {
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 12px;
+  font-weight: normal;
+  color: #999;
+}
+
+#portfolio .portfolio-box:hover .portfolio-box-caption {
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 18px;
+  color: #111;
+}
+
+#banner {
+  padding: 5px;
+}
+
+#banner .section-heading:before,
+#banner .section-heading:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+}
+
+#banner-content.row {
+  padding-top: 30px; /* 100 px */
+  padding-bottom: 30px;
+}
+
+#banner a:hover {
+  text-decoration: none;
+}
+
+.button {
+  font-size: 16px;
+  margin: 40px 0;
+  padding: 11px 16px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 20px;
+}
+
+.links {
+  padding: 5px 5px 2px 0px;
+}
+
+.contact {
+  vertical-align: middle;
+}
+
+#portfolio .portfolio-container {
+  padding: 20px;
+}
+
+/* Portfolio Box */
+
+#portfolio .portfolio-box {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding-bottom: 62%;
+  height: 0;
+  border-radius: 0px;
+  border: 1px inset #1b0180;
+  background-color: white;
+}
+
+#portfolio .portfolio-box .portfolio-box-caption {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+#portfolio .portfolio-category {
+  display: block;
+  text-align: left;
+  font-size: 12px;
+  color: #000000;
+  margin-top: 1em;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+#portfolio .portfolio-box-title {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  color: #1b0180;
+  margin-top: 0.2em;
+  width: 100%;
+  white-space: nowrap;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#portfolio .portfolio-box-description {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  color: #1b0180;
+  width: 100%;
+  margin-top: 0.7em;
+  /* font-weight: 300; */
+  white-space: wrap;
+}
+
+#portfolio .portfolio-box:hover {
+  border: 1px inset red;
+}
+
+#portfolio .portfolio-box:focus {
+  outline: 0;
+}
+
+footer:before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin: 30px auto 25px auto;
+}
+
+#banner .button {
+  border-color: #111;
+}
+
+#banner .button:hover {
+  color: #1b0180;
+  border-color: #1b0180;
+  background-color: #fdf6ee;
+}
+
+a {
+  color: #d2b356;
+}
+
+a:hover {
+  color: #d2b356;
+}
+
+#banner .section-heading:before,
+#banner .section-heading:after,
+footer:before {
+  background: #0d0344;
+}
+
+#portfolio .portfolio-box .portfolio-box-caption {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+h2 {
+  border-right: solid 3px #1b0180;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* Animation */
+h2 {
+  animation: animated-text 3.2s steps(29, end) 1s 1 normal both,
+    animated-cursor 600ms steps(29, end) infinite;
+}
+/* text animation */
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+/* cursor animations */
+@keyframes animated-cursor {
+  from {
+    border-right-color: #1b0180;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.head__nav .nav {
+  list-style: none;
+}
+.head__nav {
+  text-align: right;
+  position: relative;
+}
+
+.head__nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-default);
+}
+
+.head__nav {
+  flex: 1 1 auto;
+}
+.head__nav a {
+  margin-left: 1.5rem;
+}
