@@ -323,3 +323,15 @@ h2 {
   color: inherit;
 }
 
+#portfolio .portfolio-box {
+  height: auto;
+  padding-bottom: 0;
+  background: transparent;
+  border: none;
+}
+
+#portfolio .portfolio-container .pm-thumb{
+  border: 1px inset #1b0180;      /* reprend ton style */
+  background: white;
+  min-height: 220px;
+}
