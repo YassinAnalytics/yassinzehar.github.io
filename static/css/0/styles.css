@@ -428,3 +428,37 @@ footer:before{
     color: rgba(229,231,235,0.95) !important;
   }
 }
+
+/* =========================================================
+   FORCE SAME IMAGE SIZE (ALL SECTIONS)
+========================================================= */
+
+:root{
+  --img-h: 240px;        /* desktop image height */
+  --img-h-md: 220px;     /* tablet */
+  --img-h-sm: 165px;     /* mobile */
+}
+
+/* All card images: same height everywhere */
+.portfolio-card-img{
+  width: 100% !important;
+  height: var(--img-h) !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+/* Tablet */
+@media (max-width: 992px){
+  .portfolio-card-img{
+    height: var(--img-h-md) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px){
+  .portfolio-card-img{
+    height: var(--img-h-sm) !important;
+  }
+}
