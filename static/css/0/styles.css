@@ -1,31 +1,52 @@
+/* =========================================================
+   Yassin ZEHAR — Portfolio CSS (Modern / Responsive / Clean)
+   Replace your whole styles.css with this file
+========================================================= */
+
 /* =========================
-   Base
+   Theme
 ========================= */
 :root{
-  --bg: #fdf6ee;
-  --text: #111;
-  --muted: #999;
-  --primary: #1b0180;
-  --accent: #d2b356;
-  --card-bg: #ffffff;
-  --card-border: rgba(27, 1, 128, 0.35);
+  /* Modern dark SaaS theme */
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #60a5fa;
+  --accent: #22c55e;
+
+  --card-bg: rgba(255,255,255,0.04);
+  --card-border: rgba(96, 165, 250, 0.22);
+
+  --shadow: 0 14px 30px rgba(0,0,0,.25);
+  --radius: 16px;
 }
 
 *{ box-sizing: border-box; }
+
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+}
 
 body{
   font-family: "Open Sans", sans-serif, Arial, Helvetica;
   font-size: 15px;
   font-weight: 400;
   color: var(--text);
-  background-color: var(--bg);
+  background:
+    radial-gradient(1200px 600px at 15% 0%, rgba(96,165,250,.18), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(34,197,94,.12), transparent 55%),
+    var(--bg);
 }
 
+/* Links */
 a{
-  color: var(--accent);
+  color: var(--primary);
   text-decoration: none;
 }
-a:hover{ color: var(--accent); }
+a:hover{
+  color: var(--accent);
+}
 
 /* Lists */
 ul{
@@ -34,47 +55,65 @@ ul{
 }
 ul li{ margin-left: 20px; }
 
+/* Container spacing (Bootstrap is loaded, but we keep it neat) */
+.container{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 /* =========================
    Banner / Header
 ========================= */
 #banner{
-  padding: 5px;
+  padding: 8px 0;
+}
+
+#banner-content.row{
+  padding-top: 32px;
+  padding-bottom: 28px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#banner .section-heading:before,
+#banner .section-heading:after{
+  content: "";
+  display: block;
+  width: 34px;
+  height: 5px;
+  background: rgba(96,165,250,.45);
 }
 
 #banner h1{
   font-family: "Open Sans", sans-serif;
-  padding-top: 30px;
+  padding-top: 24px;
   padding-bottom: 10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 35px;
+  margin: 0 0 8px 0;
+  font-size: 36px;
   line-height: 1.1;
-  font-weight: 700;
-  color: var(--primary);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
 }
 
 #banner h2{
   font-family: "Poppins", sans-serif;
-  margin-bottom: 15px;
+  margin: 0 0 14px 0;
   font-size: 20px;
   line-height: 30px;
   font-weight: 300;
-  color: var(--primary);
+  color: var(--muted);
 }
 
-#banner ul{
+#banner p{
+  color: rgba(229,231,235,0.92);
+  line-height: 1.7;
+  margin-bottom: 10px;
+  max-width: 820px;
+}
+
+#banner strong{
   color: var(--text);
-  padding-left: 0;
-  font-size: 15px !important;
-}
-
-#banner a:hover{
-  text-decoration: none;
-}
-
-#banner-content.row{
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 
 /* Button */
@@ -82,58 +121,39 @@ ul li{ margin-left: 20px; }
 #banner .button{
   font-family: "Open Sans", sans-serif, Arial, Helvetica;
   font-size: 12px;
-  color: #fff;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #0b1220;
   background-color: var(--primary);
-  border: 1px solid var(--primary);
-  border-radius: 20px;
-  padding: 11px 16px;
-  margin: 40px 0;
+  border: 1px solid rgba(96,165,250,.35);
+  border-radius: 999px;
+  padding: 12px 18px;
+  margin: 26px 0 10px 0;
   display: inline-block;
-  transition: all 0.2s ease;
-}
-
-#banner .button{
-  border-color: var(--text);
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
 }
 
 #banner .button:hover{
-  color: var(--primary);
-  border-color: var(--primary);
-  background-color: var(--bg);
+  background-color: var(--accent);
+  border-color: rgba(34,197,94,.45);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
 }
 
-/* Links area */
-.links{ padding: 5px 5px 2px 0px; }
+/* Links area (if you use .links somewhere) */
+.links{ padding: 6px 6px 2px 0px; }
 div .links a{
   font-family: "Open Sans", sans-serif, Arial, Helvetica;
   font-size: 0.875rem;
-  color: var(--text);
-  padding: 2px 10px 2px 0px;
-}
-
-/* Footer */
-#landing-footer,
-#landing-footer p,
-#landing-footer a{
-  font-family: "Open Sans", sans-serif, Arial, Helvetica;
-  font-size: 12px;
-  font-weight: 400;
   color: var(--muted);
+  padding: 2px 12px 2px 0px;
 }
-
-footer:before{
-  content: "";
-  display: block;
-  width: 30px;
-  height: 5px;
-  margin: 30px auto 25px auto;
-  background: #0d0344;
-}
+div .links a:hover{ color: var(--text); }
 
 /* =========================
-   Section Headings
+   Typing effect ONLY for #typing
 ========================= */
-/* Disable global typing animation on all h2 (was causing layout weirdness) */
+/* Disable global typing animation on all h2 */
 h2{
   border-right: none;
   white-space: normal;
@@ -141,13 +161,12 @@ h2{
   animation: none;
 }
 
-/* Typing animation ONLY for #typing */
-/* Typing effect – FIXED */
+/* Typing animation only for the #typing element */
 #typing{
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: solid 3px var(--primary);
+  border-right: solid 3px rgba(96,165,250,.9);
   width: 0;
   animation: typing 1.6s steps(15, end) forwards,
              blink 700ms step-end infinite;
@@ -162,18 +181,8 @@ h2{
   50% { border-right-color: transparent; }
 }
 
-/* Section heading bars */
-#banner .section-heading:before,
-#banner .section-heading:after{
-  content: "";
-  display: block;
-  width: 30px;
-  height: 5px;
-  background: #0d0344;
-}
-
 /* =========================
-   Navigation
+   Navigation (optional / if used)
 ========================= */
 .head__nav{
   text-align: right;
@@ -188,174 +197,63 @@ h2{
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text);
+  color: var(--muted);
   margin-left: 1.5rem;
 }
+.head__nav a:hover{ color: var(--text); }
 
 /* =========================
-   Portfolio Grid (FIX "holes")
+   Section spacing + headings
 ========================= */
-
-/* Use GRID for each portfolio section */
-#portfolio-publications .row,
-#portfolio-featured .row,
-#portfolio-automation .row,
-#portfolio-data .row{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-  margin: 0;       /* neutralize bootstrap row margins */
-  padding: 0;
+section{
+  margin-top: 30px;
 }
 
-/* Neutralize bootstrap columns inside grid */
-#portfolio-publications .portfolio-container,
-#portfolio-featured .portfolio-container,
-#portfolio-automation .portfolio-container,
-#portfolio-data .portfolio-container{
-  padding: 0;      /* use grid gap instead */
+section h2{
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px 0;
+  color: var(--text);
 }
 
 /* =========================
-   Portfolio Card
-========================= */
-.portfolio-box{
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Optional: make the whole card feel clickable */
-.portfolio-box:hover .pm-thumb{
-  border-color: rgba(255, 0, 0, 0.7);
-}
-
-/* Images */
-.portfolio-img{
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  margin-bottom: 12px;
-  border: 1px solid rgba(0,0,0,0.08);
-}
-
-/* Card body */
-.pm-thumb{
-  border: 1px inset var(--primary);
-  border-radius: 12px;
-  padding: 18px;
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  background: rgba(255,255,255,0.9);
-}
-
-.pm-thumb-kicker{
-  font-size: 12px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  opacity: .7;
-  margin-bottom: 10px;
-}
-
-.pm-thumb-title{
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #000;
-}
-
-.pm-thumb-meta{
-  margin-top: auto;
-  font-size: 13px;
-  opacity: .75;
-  color: #000;
-}
-
-/* Description under the card */
-.portfolio-box-description{
-  display: block;
-  text-align: left;
-  font-size: 13px;
-  color: var(--primary);
-  width: 100%;
-  margin-top: 10px;
-  white-space: normal; /* FIX (was white-space: wrap) */
-  line-height: 1.5;
-}
-
-/* Old #portfolio caption hover system (kept but harmless) */
-#portfolio .portfolio-box-caption{
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* =========================
-   Small tweaks
-========================= */
-.contact{ vertical-align: middle; }
-
-/* Responsive image height */
-@media (max-width: 576px){
-  .portfolio-img{ height: 160px; }
-  .pm-thumb{ min-height: 200px; }
-}
-
-/* =========================
-   FIX IMAGES TOO LARGE
+   PORTFOLIO GRID (single modern system)
+   Works with your SECTION ids:
+   #publications #featured-projects #automation-delivery #data-analytics
 ========================= */
 
-/* Force ALL images inside portfolio to be responsive */
-#publications img,
-#featured-projects img,
-#automation-delivery img,
-#data-analytics img,
-#portfolio-publications img,
-#portfolio-featured img,
-#portfolio-automation img,
-#portfolio-data img{
-  max-width: 100% !important;
-  height: auto !important;
-  display: block;
-}
-
-/* Your card images: fixed height + crop */
-.portfolio-img{
-  width: 100% !important;
-  max-width: 100% !important;
-  height: 180px !important;     /* adjust: 160/180/200 */
-  object-fit: cover !important; /* crop instead of stretching */
-  border-radius: 12px;
-  display: block;
-}
-
-/* Make sure cards don't allow overflow */
-.portfolio-container,
-.portfolio-box{
-  overflow: hidden;
-}
-
-/* =========================
-   HARD FIX: Portfolio grid + image sizing
-   Targets SECTION IDs (your HTML uses these)
-========================= */
-
-/* 1) Force a clean grid for each portfolio section */
+/* Grid responsive */
 #publications .row,
 #featured-projects .row,
 #automation-delivery .row,
-#data-analytics .row {
+#data-analytics .row{
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
-  gap: 24px !important;
-
-  /* neutralize bootstrap row overflow */
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  gap: 22px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  grid-template-columns: 1fr;
 }
 
-/* 2) Neutralize bootstrap columns inside the grid */
+@media (min-width: 768px){
+  #publications .row,
+  #featured-projects .row,
+  #automation-delivery .row,
+  #data-analytics .row{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px){
+  #publications .row,
+  #featured-projects .row,
+  #automation-delivery .row,
+  #data-analytics .row{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Neutralize bootstrap cols inside grid */
 #publications .col-lg-4,
 #featured-projects .col-lg-4,
 #automation-delivery .col-lg-4,
@@ -363,145 +261,155 @@ h2{
 #publications .col-md-6,
 #featured-projects .col-md-6,
 #automation-delivery .col-md-6,
-#data-analytics .col-md-6 {
+#data-analytics .col-md-6{
   width: auto !important;
   max-width: none !important;
   padding: 0 !important;
 }
 
-/* 3) Make each card container behave */
-#publications .portfolio-container,
-#featured-projects .portfolio-container,
-#automation-delivery .portfolio-container,
-#data-analytics .portfolio-container {
-  overflow: hidden !important;
+/* Each item stretches */
+.portfolio-container{
+  display: flex;
+  flex-direction: column;
 }
 
-/* 4) Make ALL images responsive inside these sections */
-#publications img,
-#featured-projects img,
-#automation-delivery img,
-#data-analytics img {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-}
-
-/* 5) Your "card image" style (crop nicely instead of huge) */
-.portfolio-img {
-  width: 100% !important;
-  height: 190px !important;     
-  object-fit: cover !important;
-  border-radius: 12px !important;
-}
-/* Card wrapper (image INSIDE the box) */
+/* Card */
 .portfolio-card{
-  display: block;
-  background: #fff;
-  border: 1px inset #1b0180;
-  border-radius: 14px;
-  overflow: hidden;          
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
   color: inherit;
   text-decoration: none;
-  transition: transform .15s ease, box-shadow .15s ease;
+  backdrop-filter: blur(10px);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 
 .portfolio-card:hover{
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  box-shadow: var(--shadow);
+  border-color: rgba(34,197,94,.35);
 }
 
-/* Image header */
-.portfolio-card-img{
-  width: 100%;
-  height: 180px;           
-  object-fit: cover;
-  display: block;
-}
-
-/* Content inside card */
-.portfolio-card-body{
-  padding: 18px;
-  min-height: 160px;       
-  display: flex;
-  flex-direction: column;
-}
-
-.portfolio-card-body .pm-thumb-meta{
-  margin-top: auto;
-}
-
-/* =========================
-   Equal cards on desktop
-========================= */
-
-/* 1) Same image height everywhere */
+/* Image (same size everywhere) */
 .portfolio-card-img{
   width: 100% !important;
-  height: 180px !important;     /* desktop height */
+  height: 170px !important; /* mobile */
   object-fit: cover !important;
   display: block !important;
+  flex-shrink: 0;
+  filter: saturate(1.02) contrast(1.02);
 }
 
-/* 2) Make every card same height (image + body) */
-.portfolio-card{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+@media (min-width: 768px){
+  .portfolio-card-img{
+    height: 185px !important;
+  }
 }
 
-/* 3) Body takes remaining height => aligns all cards */
+/* Card body */
 .portfolio-card-body{
-  flex: 1;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  min-height: 170px;            /* forces same body height */
+  flex: 1;
+  min-height: 160px;
 }
 
-/* 4) Keep meta at the bottom */
-.portfolio-card-body .pm-thumb-meta{
+/* Text inside cards */
+.pm-thumb-kicker{
+  font-size: 12px;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+.pm-thumb-title{
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.pm-thumb-meta{
   margin-top: auto;
+  font-size: 13px;
+  color: rgba(148,163,184,0.95);
+}
+
+/* Description under the card (limited height) */
+.portfolio-box-description{
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(96,165,250,.95);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: calc(1.5em * 4);
+}
+
+/* Make strong inside descriptions pop slightly */
+.portfolio-box-description strong{
+  color: rgba(229,231,235,0.95);
+}
+
+/* Safety: do not let global image rules break fixed heights */
+#publications img,
+#featured-projects img,
+#automation-delivery img,
+#data-analytics img{
+  height: initial !important;
 }
 
 /* =========================
-   FORCE SAME CARD HEIGHT
+   Footer
 ========================= */
-
-/* 1) Chaque container occupe toute la hauteur de la grid */
-.portfolio-container{
-  display: flex;
+#landing-footer{
+  margin-top: 22px;
+  padding-bottom: 18px;
 }
 
-/* 2) La card elle-même a une hauteur fixe */
-.portfolio-card{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;        /* clé */
+#landing-footer,
+#landing-footer p,
+#landing-footer a{
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
 }
 
-/* 3) Image = hauteur fixe */
-.portfolio-card-img{
-  height: 180px;
-  object-fit: cover;
-  flex-shrink: 0;
+#landing-footer a:hover{
+  color: var(--text);
 }
 
-/* 4) Body prend l’espace restant */
-.portfolio-card-body{
-  flex: 1;             
-  display: flex;
-  flex-direction: column;
-  min-height: 160px;   
+footer:before{
+  content: "";
+  display: block;
+  width: 34px;
+  height: 5px;
+  margin: 28px auto 22px auto;
+  background: rgba(96,165,250,.45);
+  border-radius: 999px;
 }
 
-/* 5) Meta toujours en bas */
-.portfolio-card-body .pm-thumb-meta{
-  margin-top: auto;
-}
+/* =========================
+   Small tweaks / responsive
+========================= */
+.contact{ vertical-align: middle; }
 
-/* 6) Description sous la card = même hauteur */
-.portfolio-box-description{
-  min-height: 90px;   
+@media (max-width: 576px){
+  #banner h1{ font-size: 30px; }
+  section h2{ font-size: 18px; }
+  .portfolio-card-body{ padding: 14px 14px; }
+  .portfolio-card-img{ height: 155px !important; }
 }
