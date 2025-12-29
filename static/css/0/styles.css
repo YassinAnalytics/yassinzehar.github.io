@@ -300,3 +300,38 @@ h2{
   .portfolio-img{ height: 160px; }
   .pm-thumb{ min-height: 200px; }
 }
+
+/* =========================
+   FIX IMAGES TOO LARGE
+========================= */
+
+/* Force ALL images inside portfolio to be responsive */
+#publications img,
+#featured-projects img,
+#automation-delivery img,
+#data-analytics img,
+#portfolio-publications img,
+#portfolio-featured img,
+#portfolio-automation img,
+#portfolio-data img{
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* Your card images: fixed height + crop */
+.portfolio-img{
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 180px !important;     /* adjust: 160/180/200 */
+  object-fit: cover !important; /* crop instead of stretching */
+  border-radius: 12px;
+  display: block;
+}
+
+/* Make sure cards don't allow overflow */
+.portfolio-container,
+.portfolio-box{
+  overflow: hidden;
+}
+
