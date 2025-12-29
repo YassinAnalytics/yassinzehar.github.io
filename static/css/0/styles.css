@@ -1,13 +1,8 @@
-/* =========================================================
-   Yassin ZEHAR — Portfolio CSS (Modern / Responsive / Clean)
-   Replace your whole styles.css with this file
-========================================================= */
 
 /* =========================
    Theme
 ========================= */
 :root{
-  /* Modern dark SaaS theme */
   --bg: #0b1220;
   --text: #e5e7eb;
   --muted: #94a3b8;
