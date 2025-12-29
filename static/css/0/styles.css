@@ -431,3 +431,36 @@ h2{
 .portfolio-card-body .pm-thumb-meta{
   margin-top: auto;
 }
+
+/* =========================
+   Equal cards on desktop
+========================= */
+
+/* 1) Same image height everywhere */
+.portfolio-card-img{
+  width: 100% !important;
+  height: 180px !important;     /* desktop height */
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* 2) Make every card same height (image + body) */
+.portfolio-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3) Body takes remaining height => aligns all cards */
+.portfolio-card-body{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 170px;            /* forces same body height */
+}
+
+/* 4) Keep meta at the bottom */
+.portfolio-card-body .pm-thumb-meta{
+  margin-top: auto;
+}
+
