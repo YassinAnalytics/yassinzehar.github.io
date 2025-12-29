@@ -1,3 +1,7 @@
+/* =========================================================
+   Yassin ZEHAR — Portfolio CSS (Modern Dark / Responsive)
+   Copy-paste to replace your whole CSS
+========================================================= */
 
 /* =========================
    Theme
@@ -5,7 +9,7 @@
 :root{
   --bg: #0b1220;
   --text: #e5e7eb;
-  --muted: #a5b4c7;              
+  --muted: #a5b4c7;
   --primary: #60a5fa;
   --accent: #22c55e;
 
@@ -16,7 +20,17 @@
   --radius: 16px;
 }
 
+*{ box-sizing: border-box; }
+
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body{
+  font-family: "Open Sans", sans-serif, Arial, Helvetica;
+  font-size: 15px;
+  font-weight: 400;
   color: var(--text);
   background:
     radial-gradient(1200px 600px at 15% 0%, rgba(96,165,250,.18), transparent 60%),
@@ -24,9 +38,9 @@ body{
     var(--bg);
 }
 
-
-
-/* Links */
+/* =========================
+   Links / Lists / Container
+========================= */
 a{
   color: var(--primary);
   text-decoration: none;
@@ -35,14 +49,12 @@ a:hover{
   color: var(--accent);
 }
 
-/* Lists */
 ul{
   margin-top: 10px;
   margin-bottom: 10px;
 }
 ul li{ margin-left: 20px; }
 
-/* Container spacing (Bootstrap is loaded, but we keep it neat) */
 .container{
   padding-left: 16px;
   padding-right: 16px;
@@ -69,6 +81,7 @@ ul li{ margin-left: 20px; }
   width: 34px;
   height: 5px;
   background: rgba(96,165,250,.45);
+  border-radius: 999px;
 }
 
 #banner h1{
@@ -127,7 +140,7 @@ ul li{ margin-left: 20px; }
   box-shadow: 0 10px 22px rgba(0,0,0,.22);
 }
 
-/* Links area (if you use .links somewhere) */
+/* Optional links area */
 .links{ padding: 6px 6px 2px 0px; }
 div .links a{
   font-family: "Open Sans", sans-serif, Arial, Helvetica;
@@ -169,7 +182,7 @@ h2{
 }
 
 /* =========================
-   Navigation (optional / if used)
+   Navigation (optional)
 ========================= */
 .head__nav{
   text-align: right;
@@ -196,51 +209,45 @@ section{
   margin-top: 30px;
 }
 
+/* Section titles (bigger than project titles) */
 section h2{
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   letter-spacing: -0.01em;
-  margin: 0 0 14px 0;
+  margin: 0 0 16px 0;
   color: var(--text);
 }
 
 /* =========================
-   PORTFOLIO GRID (single modern system)
-   Works with your SECTION ids:
-   #publications #featured-projects #automation-delivery #data-analytics
+   PORTFOLIO GRID (WIDER CARDS + description below)
+   Works with: #publications #featured-projects #automation-delivery #data-analytics
 ========================= */
 
-/* Grid responsive */
+/* Wider grid by default */
 #publications .row,
 #featured-projects .row,
 #automation-delivery .row,
 #data-analytics .row{
   display: grid !important;
-  gap: 22px !important;
+  gap: 26px !important;
   margin: 0 !important;
   padding: 0 !important;
-  grid-template-columns: 1fr;
+
+  /* Wider cards */
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)) !important;
 }
 
-@media (min-width: 768px){
+/* Mobile: always 1 column */
+@media (max-width: 520px){
   #publications .row,
   #featured-projects .row,
   #automation-delivery .row,
   #data-analytics .row{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr !important;
   }
 }
 
-@media (min-width: 1200px){
-  #publications .row,
-  #featured-projects .row,
-  #automation-delivery .row,
-  #data-analytics .row{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-/* Neutralize bootstrap cols inside grid */
+/* Neutralize bootstrap columns inside grid */
 #publications .col-lg-4,
 #featured-projects .col-lg-4,
 #automation-delivery .col-lg-4,
@@ -256,22 +263,22 @@ section h2{
 
 /* Each item stretches */
 .portfolio-container{
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
 }
 
 /* Card */
 .portfolio-card{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  width: 100% !important;
+  display: block !important; /* prevents weird side-by-side flows */
   border-radius: var(--radius);
   overflow: hidden;
   color: inherit;
   text-decoration: none;
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   backdrop-filter: blur(10px);
   transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
@@ -282,20 +289,13 @@ section h2{
   border-color: rgba(34,197,94,.35);
 }
 
-/* Image (same size everywhere) */
+/* Image (consistent size) */
 .portfolio-card-img{
   width: 100% !important;
-  height: 170px !important; /* mobile */
+  height: 210px !important;     /* wider cards => slightly taller image */
   object-fit: cover !important;
   display: block !important;
-  flex-shrink: 0;
   filter: saturate(1.02) contrast(1.02);
-}
-
-@media (min-width: 768px){
-  .portfolio-card-img{
-    height: 185px !important;
-  }
 }
 
 /* Card body */
@@ -303,49 +303,46 @@ section h2{
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 160px;
 }
 
-/* Text inside cards */
+/* Typography inside cards */
 .pm-thumb-kicker{
-  font-size: 12px;
-  letter-spacing: .10em;
+  font-size: 11px;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--muted);
-  opacity: 1;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .pm-thumb-title{
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.2;
+  font-size: 17px;        /* smaller than section titles */
+  font-weight: 700;
+  line-height: 1.25;
   color: var(--text);
 }
 
 .pm-thumb-meta{
-  margin-top: auto;
-  font-size: 13px;
-  color: rgba(148,163,184,0.95);
-}
-
-/* Description under the card (limited height) */
-.portfolio-box-description{
   margin-top: 10px;
   font-size: 13px;
-  line-height: 1.5;
-  color: rgba(96,165,250,.95);
-
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-
-  min-height: calc(1.5em * 4);
+  color: rgba(165,180,199,0.90);
 }
 
-/* Make strong inside descriptions pop slightly */
+/* Description BELOW card, full width, limited lines */
+.portfolio-box-description{
+  width: 100% !important;
+  margin-top: 12px !important;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(96,165,250,.95);
+
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+
+  min-height: calc(1.55em * 4);
+}
+
 .portfolio-box-description strong{
   color: rgba(229,231,235,0.95);
 }
@@ -390,7 +387,7 @@ footer:before{
 }
 
 /* =========================
-   Small tweaks / responsive
+   Responsive tweaks
 ========================= */
 .contact{ vertical-align: middle; }
 
@@ -398,85 +395,12 @@ footer:before{
   #banner h1{ font-size: 30px; }
   section h2{ font-size: 18px; }
   .portfolio-card-body{ padding: 14px 14px; }
-  .portfolio-card-img{ height: 155px !important; }
-}
-/* =========================================================
-   FIX: cards wider + description always below
-   Paste at the END of your CSS (or in custom.css)
-========================================================= */
-
-/* 1) Wider grid (2 columns desktop) */
-#publications .row,
-#featured-projects .row,
-#automation-delivery .row,
-#data-analytics .row{
-  display: grid !important;
-  gap: 26px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-
-  /* cards wider by default */
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)) !important;
+  .portfolio-card-img{ height: 160px !important; }
 }
 
-/* On small screens: 1 column */
-@media (max-width: 520px){
-  #publications .row,
-  #featured-projects .row,
-  #automation-delivery .row,
-  #data-analytics .row{
-    grid-template-columns: 1fr !important;
-  }
-}
-
-/* 2) Neutralize bootstrap col padding */
-#publications .col-lg-4,
-#featured-projects .col-lg-4,
-#automation-delivery .col-lg-4,
-#data-analytics .col-lg-4,
-#publications .col-md-6,
-#featured-projects .col-md-6,
-#automation-delivery .col-md-6,
-#data-analytics .col-md-6{
-  width: auto !important;
-  max-width: none !important;
-  padding: 0 !important;
-}
-
-/* 3) Ensure the card takes full width (so text can't sit on the side) */
-.portfolio-container{
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-}
-
-.portfolio-card{
-  display: block !important;   /* IMPORTANT */
-  width: 100% !important;      /* IMPORTANT */
-}
-
-/* 4) Image height consistent */
-.portfolio-card-img{
-  width: 100% !important;
-  height: 210px !important;    /* wider card => image can be taller */
-  object-fit: cover !important;
-  display: block !important;
-}
-
-/* 5) Description always below and full width */
-.portfolio-box-description{
-  width: 100% !important;      /* IMPORTANT */
-  margin-top: 12px !important;
-  display: block !important;
-  white-space: normal !important;
-
-  /* Optional: limit height so cards don’t become too tall */
-  display: -webkit-box !important;
-  -webkit-line-clamp: 4 !important;
-  -webkit-box-orient: vertical !important;
-  overflow: hidden !important;
-}
-
+/* =========================
+   Mobile readability boost
+========================= */
 @media (max-width: 600px){
 
   .portfolio-card{
@@ -484,7 +408,6 @@ footer:before{
     border-color: rgba(96,165,250,0.28) !important;
   }
 
-  /* textes */
   #banner p{
     color: rgba(229,231,235,0.92) !important;
   }
@@ -505,4 +428,3 @@ footer:before{
     color: rgba(229,231,235,0.95) !important;
   }
 }
-
