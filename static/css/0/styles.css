@@ -335,3 +335,62 @@ h2{
   overflow: hidden;
 }
 
+/* =========================
+   HARD FIX: Portfolio grid + image sizing
+   Targets SECTION IDs (your HTML uses these)
+========================= */
+
+/* 1) Force a clean grid for each portfolio section */
+#publications .row,
+#featured-projects .row,
+#automation-delivery .row,
+#data-analytics .row {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 24px !important;
+
+  /* neutralize bootstrap row overflow */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 2) Neutralize bootstrap columns inside the grid */
+#publications .col-lg-4,
+#featured-projects .col-lg-4,
+#automation-delivery .col-lg-4,
+#data-analytics .col-lg-4,
+#publications .col-md-6,
+#featured-projects .col-md-6,
+#automation-delivery .col-md-6,
+#data-analytics .col-md-6 {
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+/* 3) Make each card container behave */
+#publications .portfolio-container,
+#featured-projects .portfolio-container,
+#automation-delivery .portfolio-container,
+#data-analytics .portfolio-container {
+  overflow: hidden !important;
+}
+
+/* 4) Make ALL images responsive inside these sections */
+#publications img,
+#featured-projects img,
+#automation-delivery img,
+#data-analytics img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* 5) Your "card image" style (crop nicely instead of huge) */
+.portfolio-img {
+  width: 100% !important;
+  height: 190px !important;      /* adjust if you want */
+  object-fit: cover !important;
+  border-radius: 12px !important;
+}
