@@ -142,19 +142,20 @@ h2{
 }
 
 /* Typing animation ONLY for #typing */
+/* Typing effect – FIXED */
 #typing{
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   border-right: solid 3px var(--primary);
   width: 0;
-  animation: typing 2.8s steps(30, end) forwards,
+  animation: typing 1.6s steps(15, end) forwards,
              blink 700ms step-end infinite;
 }
 
 @keyframes typing{
   from { width: 0; }
-  to   { width: 100%; }
+  to   { width: 15ch; }
 }
 
 @keyframes blink{
