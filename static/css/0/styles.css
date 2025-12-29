@@ -3,36 +3,23 @@
    Theme
 ========================= */
 :root{
-  --bg: #0b1220;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --primary: #60a5fa;
-  --accent: #22c55e;
-
-  --card-bg: rgba(255,255,255,0.04);
-  --card-border: rgba(96, 165, 250, 0.22);
-
-  --shadow: 0 14px 30px rgba(0,0,0,.25);
-  --radius: 16px;
-}
-
-*{ box-sizing: border-box; }
-
-html, body{
-  width: 100%;
-  overflow-x: hidden;
+  --bg: #f6f8fb;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --accent: #16a34a;
+  --card-bg: #ffffff;
+  --card-border: rgba(37, 99, 235, 0.18);
 }
 
 body{
-  font-family: "Open Sans", sans-serif, Arial, Helvetica;
-  font-size: 15px;
-  font-weight: 400;
   color: var(--text);
   background:
-    radial-gradient(1200px 600px at 15% 0%, rgba(96,165,250,.18), transparent 60%),
-    radial-gradient(900px 500px at 85% 10%, rgba(34,197,94,.12), transparent 55%),
+    radial-gradient(900px 500px at 15% 0%, rgba(37,99,235,.10), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(22,163,74,.08), transparent 55%),
     var(--bg);
 }
+
 
 /* Links */
 a{
@@ -407,4 +394,80 @@ footer:before{
   section h2{ font-size: 18px; }
   .portfolio-card-body{ padding: 14px 14px; }
   .portfolio-card-img{ height: 155px !important; }
+}
+/* =========================================================
+   FIX: cards wider + description always below
+   Paste at the END of your CSS (or in custom.css)
+========================================================= */
+
+/* 1) Wider grid (2 columns desktop) */
+#publications .row,
+#featured-projects .row,
+#automation-delivery .row,
+#data-analytics .row{
+  display: grid !important;
+  gap: 26px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  /* cards wider by default */
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)) !important;
+}
+
+/* On small screens: 1 column */
+@media (max-width: 520px){
+  #publications .row,
+  #featured-projects .row,
+  #automation-delivery .row,
+  #data-analytics .row{
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 2) Neutralize bootstrap col padding */
+#publications .col-lg-4,
+#featured-projects .col-lg-4,
+#automation-delivery .col-lg-4,
+#data-analytics .col-lg-4,
+#publications .col-md-6,
+#featured-projects .col-md-6,
+#automation-delivery .col-md-6,
+#data-analytics .col-md-6{
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+/* 3) Ensure the card takes full width (so text can't sit on the side) */
+.portfolio-container{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+.portfolio-card{
+  display: block !important;   /* IMPORTANT */
+  width: 100% !important;      /* IMPORTANT */
+}
+
+/* 4) Image height consistent */
+.portfolio-card-img{
+  width: 100% !important;
+  height: 210px !important;    /* wider card => image can be taller */
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* 5) Description always below and full width */
+.portfolio-box-description{
+  width: 100% !important;      /* IMPORTANT */
+  margin-top: 12px !important;
+  display: block !important;
+  white-space: normal !important;
+
+  /* Optional: limit height so cards don’t become too tall */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
 }
