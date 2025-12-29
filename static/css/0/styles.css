@@ -458,3 +458,37 @@ footer:before{
     height: var(--img-h-sm) !important;
   }
 }
+/* =========================================================
+   FORCE SAME IMAGE SIZE — ALL PORTFOLIO CARDS
+========================================================= */
+
+:root{
+  --img-height-desktop: 220px;
+  --img-height-tablet: 200px;
+  --img-height-mobile: 160px;
+}
+
+/* All card images */
+.portfolio-card-img{
+  width: 100% !important;
+  height: var(--img-height-desktop) !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+  background: #0b1220; /* évite les flashs clairs */
+}
+
+/* Tablet */
+@media (max-width: 992px){
+  .portfolio-card-img{
+    height: var(--img-height-tablet) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px){
+  .portfolio-card-img{
+    height: var(--img-height-mobile) !important;
+  }
+}
