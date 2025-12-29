@@ -7,7 +7,7 @@ experience as a **Product Manager**, with a strong focus on execution, data-info
 decision-making and measurable outcomes.
 
 ## Live website
-👉 https://yassinanalytics.github.io/yassinzehar.github.io/
+👉 https://yassinanalytics.github.io
 
 ## What you’ll find
 - Product case studies
